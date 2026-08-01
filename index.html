@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Platform — Login / Register</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <main class="split-container" id="page-root">
+    <!-- Left: Illustration / marketing -->
+    <section class="hero" aria-hidden="true">
+      <div class="hero-content">
+        <!-- Decorative illustration placeholder (replace with branded SVG/illustration) -->
+        <div class="illustration" role="img" aria-label="Abstract illustration representing career growth and professional networking">
+          <!-- Simple abstract SVG: replace with production artwork -->
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#60a5fa"/>
+                <stop offset="1" stop-color="#7dd3fc"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g)" rx="24"/>
+            <g transform="translate(40,40)" fill="#fff" opacity="0.18">
+              <rect x="0" y="200" width="120" height="120" rx="20"/>
+              <rect x="140" y="140" width="120" height="180" rx="20"/>
+              <rect x="280" y="80" width="120" height="240" rx="20"/>
+              <circle cx="520" cy="60" r="40"/>
+            </g>
+            <g transform="translate(60,20)" fill="#fff" opacity="0.26">
+              <path d="M0 320 C120 240, 260 360, 420 260 C520 200, 600 300, 600 300 L600 400 L0 400 Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <h1 class="hero-title">Connect. Grow. Mentor.</h1>
+        <p class="hero-sub">A trusted alumni & student network for career growth, mentorship, and professional collaboration.</p>
+
+        <ul class="hero-features">
+          <li>Verified institutional accounts</li>
+          <li>Mentorship & career workshops</li>
+          <li>Secure networking & opportunities</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Right: Auth card -->
+    <section class="auth-shell" aria-labelledby="auth-heading">
+      <div class="card" role="region" aria-describedby="auth-desc">
+        <div class="card-top">
+          <!-- Logo (text-based, replace with image/logo svg) -->
+          <div class="logo" aria-hidden="false">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="5" fill="#2563eb"/>
+              <path d="M6 12h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 6v12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="brand">COPPER</span>
+          </div>
+
+          <h2 id="auth-heading">Welcome back</h2>
+          <p id="auth-desc" class="muted">Sign in to continue or create an account to join the community.</p>
+        </div>
+
+        <!-- Segmented control -->
+        <div class="segmented" role="tablist" aria-label="Authentication switch">
+          <button class="segmented-btn active" role="tab" aria-selected="true" id="tab-login" data-target="login">Login</button>
+          <button class="segmented-btn" role="tab" aria-selected="false" id="tab-register" data-target="register">Register</button>
+        </div>
+
+        <!-- Forms -->
+        <div class="forms">
+
+          <!-- LOGIN -->
+          <form id="login" class="auth-form active" aria-labelledby="tab-login" novalidate>
+            <div class="form-group">
+              <label for="login-email">Username or Email</label>
+              <input id="login-email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="name@university.edu" />
+              <span class="field-error" id="login-email-error" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="input-with-action">
+                <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
+                <button type="button" class="icon-btn toggle-password" data-target="login-password" aria-label="Show password" aria-pressed="false">Show</button>
+              </div>
+              <span class="field-error" id="login-password-error" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-row space-between">
+              <label class="checkbox">
+                <input id="remember" name="remember" type="checkbox" />
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="muted small">Forgot password?</a>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn-primary full">Sign in</button>
+            </div>
+
+            <div class="divider"><span>Or continue with</span></div>
+
+            <div class="social-row">
+              <button type="button" class="btn-social" aria-label="Continue with Google">
+                <!-- Google SVG -->
+                <svg class="social-icon" viewBox="0 0 48 48" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#EA4335" d="M24 11.5v8.9h12.3c-.5 3-3.5 8.8-12.3 8.8-7.4 0-13.4-6.1-13.4-13.6S16.6 11.5 24 11.5z"/><path fill="#34A853" d="M6.6 23.4c0 5 3.2 9.2 7.7 11.3l5.6-8.9C18.6 24.4 16.7 24 14.7 23.4z"/><path fill="#4A90E2" d="M24 36.5c6.1 0 11.2-2 14.9-5.5l-7.1-5.6c-2 1.7-5 2.8-7.8 2.8-6.9 0-12.5-4.7-14.6-11.1H6.6v6.9C9 31.9 16 36.5 24 36.5z"/><path fill="#FBBC05" d="M38.9 12.2l-6.9 5.4c-1.9-1.5-4.1-2.4-6.8-2.4-3.1 0-5.9 1.2-8 3.1V12.2h-8.2C10 9.3 16.5 6 24 6c6 0 11.2 2.2 14.9 6.2z"/></svg>
+                Google
+              </button>
+
+              <button type="button" class="btn-social" aria-label="Continue with LinkedIn">
+                <!-- LinkedIn SVG -->
+                <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#0A66C2" d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1 4.98 2.12 4.98 3.5zM.45 24h4.1V7.98H.45V24zM8.5 7.98h3.93v2.17h.06c.55-1.04 1.9-2.17 3.9-2.17C20.36 7.98 24 10.22 24 15.17V24h-4.1v-7.12c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.84-2.72 3.76V24H8.5V7.98z"/></svg>
+                LinkedIn
+              </button>
+
+              <button type="button" class="btn-social" aria-label="Continue with GitHub">
+                <!-- GitHub SVG -->
+                <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#111" d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.6 3 8.6 7.2 10-.1-.8-.2-2.1.1-3 0 0-.3-.8-.3-2 0-1 .5-1.7 1.1-2.1-.4-.1-.8-.7-.4-1.9 0 0 .9-.3 3 .9.9-.3 1.9-.4 2.8-.4s1.9.1 2.8.4c2.1-1.2 3-1 3-1 .4 1.2 0 1.8-.4 1.9.6.4 1.1 1.2 1.1 2.1 0 1.2-.3 2-.3 2 .3.9.3 2.2.1 3 4.2-1.5 7.2-5.4 7.2-10 0-6.3-4.8-11.1-10.9-11.1z"/></svg>
+                GitHub
+              </button>
+            </div>
+          </form>
+
+          <!-- REGISTER -->
+          <form id="register" class="auth-form" aria-labelledby="tab-register" novalidate>
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="reg-name">Full name</label>
+                <input id="reg-name" name="fullname" type="text" autocomplete="name" placeholder="First Last" required />
+                <span class="field-error" id="reg-name-error" aria-live="assertive"></span>
+              </div>
+
+              <div class="form-group half">
+                <label for="reg-email">Institutional email</label>
+                <input id="reg-email" name="email" type="email" autocomplete="email" placeholder="name@university.edu" required />
+                <span class="field-error" id="reg-email-error" aria-live="assertive"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="reg-password">Password</label>
+                <div class="input-with-action">
+                  <input id="reg-password" name="password" type="password" autocomplete="new-password" placeholder="Choose a strong password" required />
+                  <button type="button" class="icon-btn toggle-password" data-target="reg-password" aria-label="Show password" aria-pressed="false">Show</button>
+                </div>
+                <span class="muted small">Minimum 8 characters with a number and a symbol.</span>
+                <span class="field-error" id="reg-password-error" aria-live="assertive"></span>
+              </div>
+
+              <div class="form-group half">
+                <label for="reg-confirm">Confirm password</label>
+                <div class="input-with-action">
+                  <input id="reg-confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Repeat password" required />
+                  <button type="button" class="icon-btn toggle-password" data-target="reg-confirm" aria-label="Show password" aria-pressed="false">Show</button>
+                </div>
+                <span class="field-error" id="reg-confirm-error" aria-live="assertive"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-role">Role</label>
+                <select id="reg-role" name="role" required>
+                  <option value="">Choose role...</option>
+                  <option value="student">Student</option>
+                  <option value="alumni">Alumni</option>
+                  <option value="admin">Admin</option>
+                </select>
+                <span class="field-error" id="reg-role-error" aria-live="assertive"></span>
+              </div>
+            </div>
+
+            <div class="form-group" id="id-verification-group" hidden>
+              <label for="reg-id">Student / Alumni ID</label>
+              <input id="reg-id" name="institutional_id" type="text" placeholder="Institutional ID for verification" />
+              <span class="muted small">We will verify your affiliation before approving your account.</span>
+              <span class="field-error" id="reg-id-error" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn-primary full">Create account</button>
+            </div>
+
+            <div class="divider"><span>Or sign up with</span></div>
+
+            <div class="social-row">
+              <button type="button" class="btn-social" aria-label="Sign up with Google">Google</button>
+              <button type="button" class="btn-social" aria-label="Sign up with LinkedIn">LinkedIn</button>
+              <button type="button" class="btn-social" aria-label="Sign up with GitHub">GitHub</button>
+            </div>
+          </form>
+
+        </div>
+
+        <p class="muted small center">By continuing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+      </div>
+    </section>
+  </main>
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

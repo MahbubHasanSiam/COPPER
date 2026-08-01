@@ -1,0 +1,102 @@
+:root{
+  --bg:#f6fbff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary-600:#2563eb;
+  --accent:linear-gradient(135deg,#60a5fa 0%,#7dd3fc 100%);
+  --shadow:0 10px 30px rgba(16,24,40,0.06);
+  --radius:12px;
+  font-family: "Facebook Sans", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#0f172a;
+}
+
+*{box-sizing:border-box}
+html,body,#app-root{height:100%}
+body{margin:0;background:var(--bg);-webkit-font-smoothing:antialiased;font-size:15px;color:var(--color,#0f172a);padding:0 10vw}
+
+/* layout: 3 columns */
+.app{display:grid;grid-template-columns:280px 1fr 360px;gap:18px;padding:18px;align-items:start;min-height:100vh}
+
+/* shared */
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* left column */
+.left-col .profile-card{display:flex;flex-direction:column;gap:12px;padding:18px}
+.left-col .avatar{width:84px;height:84px;border-radius:999px;object-fit:cover}
+.profile-info{display:flex;flex-direction:column;gap:4px}
+.profile-completion{background:linear-gradient(180deg,rgba(15,23,42,0.02),transparent);padding:10px;border-radius:10px}
+.pc-top{display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.pc-bar{height:8px;background:rgba(15,23,42,0.04);border-radius:999px;margin-top:8px;overflow:hidden}
+.pc-fill{height:100%;background:var(--accent);}
+
+/* quick nav */
+.quick-nav{display:flex;flex-direction:column;gap:6px}
+.q-link{padding:8px;border-radius:8px;color:var(--muted);text-decoration:none}
+.q-link.active{background:rgba(37,99,235,0.06);color:var(--primary-600);font-weight:600}
+
+/* trending */
+.trending ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.trending li{font-weight:600;color:var(--primary-600)}
+
+/* center */
+.center-col{min-width:0;display:flex;flex-direction:column;align-items:center;}
+.center-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;width:100%;max-width:646px}
+.center-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.composer{margin-bottom:16px;width:100%;max-width:646px}
+.feed-list{display:flex;flex-direction:column;gap:12px;width:100%;max-width:646px;align-items:center}
+.center-controls input{padding:8px 10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);min-width:220px}
+.composer{margin-bottom:16px}
+.composer-top{display:flex;gap:12px;align-items:flex-start}
+.avatar-sm{width:44px;height:44px;border-radius:999px}
+.composer textarea{flex:1;border-radius:10px;border:1px solid rgba(15,23,42,0.06);padding:10px;font-size:14px;resize:vertical;min-height:64px}
+.composer-actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.attach-btn{background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;color:var(--muted)}
+.btn-primary{background:var(--accent);color:#05204A;border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(59,130,246,0.08)}
+.btn-outline{background:#fff;border:1px solid rgba(15,23,42,0.06);padding:8px 10px;border-radius:10px;cursor:pointer}
+
+/* feed list & post card */
+.post-card{background:var(--card);width:100%;max-width:646px;border-radius:12px;padding:14px;box-shadow:var(--shadow);transition:transform .12s ease}
+.post-card:hover{transform:translateY(-6px)}
+.post-head{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.post-head img{width:48px;height:48px;border-radius:999px;object-fit:cover}
+.post-meta{flex:1}
+.post-meta .name{font-weight:700}
+.post-meta .meta-sub{color:var(--muted);font-size:13px}
+.verified-badge{display:inline-block;background:linear-gradient(90deg,#fff,#fff);color:var(--primary-600);border-radius:6px;padding:4px;font-size:12px;margin-left:8px}
+
+/* post body */
+.post-body{margin:8px 0;font-size:15px;line-height:1.45}
+.post-media{margin-top:10px;border-radius:10px;overflow:hidden}
+.post-media img{width:100%;height:auto;display:block}
+
+/* post footer actions */
+.post-actions{display:flex;gap:8px;align-items:center;margin-top:10px;border-top:1px dashed rgba(15,23,42,0.04);padding-top:10px}
+.action-btn{background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.action-btn.active{color:var(--primary-600);font-weight:600;transform:translateY(-2px)}
+.bookmark{margin-left:auto}
+
+/* right column */
+.right-col{display:flex;flex-direction:column;gap:12px}
+.jobs-card .job{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.03);margin-bottom:8px}
+.comp-logo{width:48px;height:48px;border-radius:8px;object-fit:cover}
+.recs-card .alum{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.03);margin-bottom:8px}
+.recs-card .alum img{width:56px;height:56px;border-radius:999px;object-fit:cover}
+.tag{background:rgba(59,130,246,0.08);padding:4px 8px;border-radius:999px;font-size:12px}
+
+/* micro */
+.card-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.small{font-size:13px}
+.signout{background:transparent;border:0;color:var(--muted);cursor:pointer}
+
+/* responsiveness */
+@media (max-width:1100px){
+  body{padding:0 18px}
+  .app{grid-template-columns:1fr;gap:12px;padding:12px}
+  .left-col,.right-col{display:none}
+  .center-col{width:100%}
+}
+
+/* accessibility */
+[aria-live]{outline: none}

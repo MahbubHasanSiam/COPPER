@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <div class="app" id="app-root">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="sidebar-top">
+        <a class="brand" href="feed.html" aria-label="Back to Home page">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="#2563eb"/><path d="M6 12h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 6v12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="brand-text">COPPER</span>
+        </a>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Collapse navigation">⫶</button>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#" data-page="home"><span class="nav-ico"></span><span class="nav-label">Dashboard</span></a>
+        <a class="nav-item" href="feed.html" data-page="feed"><span class="nav-ico"></span><span class="nav-label">Feed</span></a>
+        <a class="nav-item" href="#" data-page="jobs"><span class="nav-ico"></span><span class="nav-label">Jobs</span></a>
+        <a class="nav-item" href="network.html" data-page="network"><span class="nav-ico"></span><span class="nav-label">Alumni Network</span></a>
+        <a class="nav-item" href="#" data-page="skills"><span class="nav-ico"></span><span class="nav-label">Skill Analysis</span></a>
+        <a class="nav-item" href="events.html" data-page="events"><span class="nav-ico"></span><span class="nav-label">Events</span></a>
+        <a class="nav-item" href="#" data-page="messages"><span class="nav-ico"></span><span class="nav-label">Messages</span></a>
+        <a class="nav-item" href="#" data-page="assistant"><span class="nav-ico"></span><span class="nav-label">AI Assistant</span></a>
+        <a class="nav-item" href="#" data-page="profile"><span class="nav-ico"></span><span class="nav-label">Profile</span></a>
+        <a class="nav-item" href="settings.html" data-page="settings"><span class="nav-ico"></span><span class="nav-label">Settings</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="signOut" class="signout">Sign out</button>
+      </div>
+    </aside>
+
+    <!-- Main area -->
+    <div class="main">
+      <!-- Top nav -->
+      <header class="topbar">
+        <div class="top-left">
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+          <h1 class="page-title" id="pageTitle">Dashboard</h1>
+        </div>
+
+        <div class="top-actions">
+          <div class="search">
+            <label for="searchInput" class="sr-only">Search</label>
+            <input id="searchInput" type="search" placeholder="Search alumni, posts, jobs..." />
+          </div>
+
+          <button class="icon-btn" id="notifBtn" title="Notifications" aria-label="Notifications">🔔<span class="badge">3</span></button>
+          <a class="nav-link" href="settings.html">Settings</a>
+          <div class="avatar" id="avatarBtn" title="Account">
+            <img src="tanjuma.jpg" alt="User avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="content" id="content">
+        <!-- Welcome & Summary cards -->
+        <section class="top-section">
+          <div class="welcome">
+            <h2 id="welcomeTitle">Welcome back, <span id="welcomeName">Jordan</span> 👋</h2>
+            <p class="muted">Here's what's happening in your network and suggested actions to boost your profile.</p>
+          </div>
+
+          <div class="cards-row">
+            <div class="card small card-profile-strength">
+              <div class="card-title">Profile Strength</div>
+              <div class="progress">
+                <div class="progress-inner">72%</div>
+              </div>
+              <div class="card-note">Add more skills and a resume to reach 90%.</div>
+            </div>
+
+            <div class="card small">
+              <div class="card-title">Skills Analyzed</div>
+              <div class="card-number">18</div>
+              <div class="card-note">Based on your CV & activity</div>
+            </div>
+
+            <div class="card small">
+              <div class="card-title">Connected Alumni</div>
+              <div class="card-number">256</div>
+              <div class="card-note">Active in last 30 days</div>
+            </div>
+
+            <div class="card small">
+              <div class="card-title">Upcoming Events</div>
+              <div class="card-number">4</div>
+              <div class="card-note">Workshops & meetups</div>
+            </div>
+
+            <div class="card small">
+              <div class="card-title">Resume Complete</div>
+              <div class="card-number">85%</div>
+              <div class="card-note">Upload latest version</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Action Banner -->
+        <section class="banner card">
+          <div class="banner-left">
+            <h3>Boost your career visibility</h3>
+            <p class="muted">Analyze your skills, update your profile, or upload a resume — it only takes a minute and increases your match rate for jobs and mentors.</p>
+            <div class="banner-actions">
+              <button class="btn-primary" id="analyzeBtn">Analyze my skills</button>
+              <button class="btn-outline" id="updateProfileBtn">Update profile</button>
+              <button class="btn-ghost" id="uploadResumeBtn">Upload resume</button>
+            </div>
+          </div>
+          <div class="banner-right" aria-hidden="true">
+            <svg viewBox="0 0 200 120" width="220" height="140" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="bgG" x1="0" x2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient></defs>
+              <rect rx="12" width="100%" height="100%" fill="url(#bgG)" opacity="0.14"/>
+              <g fill="#2563eb" opacity="0.9"><circle cx="40" cy="40" r="18"/><rect x="80" y="20" width="30" height="60" rx="8"/><rect x="120" y="10" width="18" height="80" rx="6"/></g>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Lower grid: Recent activity, recommended connections, opportunities -->
+        <section class="lower-grid">
+          <div class="col">
+            <div class="card">
+              <div class="card-heading">
+                <h4>Recent Activity</h4>
+                <a href="#" class="muted small">View all</a>
+              </div>
+              <ul class="activity-list">
+                <li>
+                  <div class="act-left"><img src="https://i.pravatar.cc/44?img=65" alt="" /></div>
+                  <div class="act-body"><strong>Dr. Smith</strong> posted about new mentorship openings. <span class="muted small">2h ago</span></div>
+                </li>
+                <li>
+                  <div class="act-left"><img src="https://i.pravatar.cc/44?img=12" alt="" /></div>
+                  <div class="act-body"><strong>Amy</strong> recommended you to a role: Data Analyst. <span class="muted small">1d ago</span></div>
+                </li>
+                <li>
+                  <div class="act-left"><img src="https://i.pravatar.cc/44?img=28" alt="" /></div>
+                  <div class="act-body"><strong>Career Office</strong> posted internship opportunities. <span class="muted small">3d ago</span></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-heading">
+                <h4>Upcoming Opportunities</h4>
+                <a href="#" class="muted small">Explore jobs</a>
+              </div>
+
+              <div class="opportunity">
+                <div class="opp-left">💼</div>
+                <div class="opp-body">
+                  <strong>Associate Product Manager</strong>
+                  <div class="muted small">TechCorp • Remote • 3 days left</div>
+                </div>
+                <div class="opp-actions"><button class="btn-outline small">Apply</button></div>
+              </div>
+
+              <div class="opportunity">
+                <div class="opp-left">🎓</div>
+                <div class="opp-body">
+                  <strong>Alumni Networking Mixer</strong>
+                  <div class="muted small">Campus Hall • Apr 15</div>
+                </div>
+                <div class="opp-actions"><button class="btn-outline small">RSVP</button></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card">
+              <div class="card-heading">
+                <h4>Recommended Connections</h4>
+                <a href="#" class="muted small">See more</a>
+              </div>
+
+              <div class="suggestions-grid">
+                <div class="profile-card">
+                  <img src="https://i.pravatar.cc/80?img=10" alt="Sarah" />
+                  <div class="p-body">
+                    <strong>Sarah Lee</strong>
+                    <div class="muted small">Alumni • Product Designer</div>
+                  </div>
+                  <button class="btn-primary small">Connect</button>
+                </div>
+
+                <div class="profile-card">
+                  <img src="https://i.pravatar.cc/80?img=15" alt="Mark" />
+                  <div class="p-body">
+                    <strong>Mark R.</strong>
+                    <div class="muted small">Alumni • Data Scientist</div>
+                  </div>
+                  <button class="btn-outline small">View</button>
+                </div>
+
+                <div class="profile-card">
+                  <img src="https://i.pravatar.cc/80?img=22" alt="Priya" />
+                  <div class="p-body">
+                    <strong>Priya K.</strong>
+                    <div class="muted small">Mentor • Engineering</div>
+                  </div>
+                  <button class="btn-primary small">Connect</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card profile-settings" id="profileSettings">
+              <div class="cover">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d93f5052fc3b8c873e4d3f1f55f0f6b" alt="Cover image" />
+                <div class="avatar-large"><img src="tanjuma.jpg" alt="Profile avatar" /></div>
+              </div>
+
+              <div class="profile-meta">
+                <div class="meta-left">
+                  <h3 id="fullName">Tanjuma Akter</h3>  
+                  <div class="muted">Software Engineer • Class of 2024</div>
+                </div>
+                <div class="meta-right">
+                  <button class="btn-outline">Edit Profile</button>
+                </div>
+              </div>
+
+              <p class="bio muted">Passionate about building data-driven products and helping students transition into tech careers. Open to mentorship and speaking engagements.</p>
+
+              <div class="profile-details-grid">
+                <div class="detail-card">
+                  <strong>Location</strong>
+                  <div class="muted">Boston, MA</div>
+                </div>
+                <div class="detail-card">
+                  <strong>Website</strong>
+                  <div class="muted"><a href="#">jordanwalker.dev</a></div>
+                </div>
+                <div class="detail-card">
+                  <strong>LinkedIn</strong>
+                  <div class="muted"><a href="#">/in/jordanwalker</a></div>
+                </div>
+                <div class="detail-card">
+                  <strong>Twitter</strong>
+                  <div class="muted"><a href="#">@jordan_dev</a></div>
+                </div>
+              </div>
+
+              <!-- Editable sections summary (links to settings area or modals) -->
+              <div class="settings-grid">
+                <a class="settings-card" href="#academic">Academic Information</a>
+                <a class="settings-card" href="#work">Work Experience</a>
+                <a class="settings-card" href="#skills">Skills & Technologies</a>
+                <a class="settings-card" href="#certs">Certifications</a>
+                <a class="settings-card" href="#resume">Resume & Portfolio</a>
+                <a class="settings-card" href="#privacy">Privacy Settings</a>
+                <a class="settings-card" href="#security">Account Security</a>
+                <a class="settings-card" href="#notifications">Notification Preferences</a>
+                <a class="settings-card" href="#connected">Connected Accounts</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Profile settings full forms (placeholders) -->
+        <section class="full-settings" id="fullSettings">
+          <div class="card">
+            <h4 id="academic">Academic Information</h4>
+            <form class="form-grid">
+              <label>Institution<input type="text" placeholder="University of Example" /></label>
+              <label>Degree<input type="text" placeholder="B.S. Computer Science" /></label>
+              <label>Major<input type="text" placeholder="Data Science" /></label>
+              <label>Graduation Year<input type="text" placeholder="2018" /></label>
+              <div class="form-actions"><button type="submit" class="btn-primary">Save</button></div>
+            </form>
+          </div>
+
+          <div class="card">
+            <h4 id="work">Work Experience</h4>
+            <p class="muted">Add roles, responsibilities and durations. Use the + button to add entries.</p>
+            <div class="form-actions"><button class="btn-outline">Add experience</button></div>
+          </div>
+
+          <div class="card">
+            <h4 id="skills">Skills & Technologies</h4>
+            <p class="muted">Tag your skills, set proficiency, and request skill analysis.</p>
+            <div class="skill-tags">
+              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Product Management</span><span class="tag">React</span>
+            </div>
+            <div class="form-actions"><button id="runAnalysis" class="btn-primary">Run Skill Analysis</button></div>
+          </div>
+
+          <div class="card">
+            <h4 id="certs">Certifications</h4>
+            <p class="muted">Upload or link certifications (Coursera, LinkedIn Learning, etc.)</p>
+            <div class="form-actions"><button class="btn-outline">Add certification</button></div>
+          </div>
+
+          <div class="card">
+            <h4 id="resume">Resume & Portfolio Upload</h4>
+            <p class="muted">Upload your latest resume or link your portfolio (PDF, GitHub, personal site).</p>
+            <div class="upload-row">
+              <label for="resumeUpload" class="sr-only">Upload resume</label>
+              <input type="file" id="resumeUpload" /> 
+              <button class="btn-primary">Upload</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h4 id="privacy">Privacy Settings</h4>
+            <label class="row-checkbox"><input type="checkbox" checked /> Show profile to alumni network</label>
+            <label class="row-checkbox"><input type="checkbox" /> Share activity with community feed</label>
+          </div>
+
+          <div class="card">
+            <h4 id="security">Account Security</h4>
+            <p class="muted">Manage 2FA, sessions, and connected devices.</p>
+            <div class="form-actions"><button class="btn-outline">Manage security</button></div>
+          </div>
+
+          <div class="card">
+            <h4 id="notifications">Notification Preferences</h4>
+            <label class="row-checkbox"><input type="checkbox" checked /> Email: new messages</label>
+            <label class="row-checkbox"><input type="checkbox" checked /> Email: job matches</label>
+            <label class="row-checkbox"><input type="checkbox" /> SMS: important alerts</label>
+          </div>
+
+          <div class="card">
+            <h4 id="connected">Connected Accounts</h4>
+            <p class="muted">Link GitHub, LinkedIn, Google for quicker sign-in and verification.</p>
+            <div class="connected-list">
+              <div class="connected-item">LinkedIn <button class="btn-outline small">Disconnect</button></div>
+              <div class="connected-item">GitHub <button class="btn-outline small">Disconnect</button></div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="page-footer muted small">© <span id="copyYear"></span> AlumNet · Built for alumni & students</footer>
+      </main>
+    </div>
+  </div>
+  <script src="theme.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

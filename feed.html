@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="feed.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <div class="app" id="app-root">
+    <!-- Left column: compact profile + nav -->
+    <aside class="left-col" aria-label="Left sidebar">
+      <div class="profile-card">
+        <img class="avatar" src="tanjuma.jpg" alt="User avatar">
+        <div class="profile-info">
+          <strong id="leftName">Tanjuma Akther</strong>
+          <div class="muted small">Software Engineer • Alum • Class of 2024</div>
+        </div>
+
+        <div class="profile-completion">
+          <div class="pc-top"><span>Profile Completion</span><strong>72%</strong></div>
+          <div class="pc-bar"><div class="pc-fill" ></div></div>
+          <button id="completeProfile" class="btn-outline small">Complete profile</button>
+        </div>
+
+        <nav class="quick-nav" aria-label="Quick links">
+          <a href="dashboard.html" class="q-link">Dashboard</a>
+          <a href="feed.html" class="q-link active">Feed</a>
+          <a href="events.html" class="q-link">Events</a>
+          <a href="#" class="q-link">Saved Jobs</a>
+          <a href="#" class="q-link">Bookmarks</a>
+          <a href="#" class="q-link">Drafts</a>
+        </nav>
+
+        <div class="trending">
+          <div class="tr-title">Trending</div>
+          <ul>
+            <li>#MachineLearning</li>
+            <li>#CareerTips</li>
+            <li>#AlumniStories</li>
+            <li>#RemoteWork</li>
+          </ul>
+        </div>
+
+        <button id="signOutLeft" class="signout small">Sign out</button>
+      </div>
+    </aside>
+
+    <!-- Center column: feed -->
+    <main class="center-col" id="centerCol" role="main">
+      <header class="center-top">
+        <h2>Home</h2>
+        <div class="center-controls">
+          <input id="searchFeed" type="search" placeholder="Search posts, people, hashtags..." />
+          <a class="nav-link" href="settings.html">Settings</a>
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" href="events.html">Events</a>
+          <a class="nav-link" href="network.html">Network</a>
+        </div>
+      </header>
+
+      <!-- Post composer card -->
+      <section class="composer card" aria-label="Create a post">
+        <div class="composer-top">
+          <img class="avatar-sm" src="tanjuma.jpg" alt="">
+          <textarea id="postText" placeholder="Share an update, job, project, or question..." rows="3" aria-label="Create post"></textarea>
+        </div>
+
+        <div class="composer-actions">
+          <div class="attach">
+            <button data-action="image" class="attach-btn">🖼️ Image</button>
+            <button data-action="video" class="attach-btn">🎥 Video</button>
+            <button data-action="doc" class="attach-btn">📄 Doc</button>
+            <button data-action="link" class="attach-btn">🔗 Link</button>
+            <button data-action="poll" class="attach-btn">📊 Poll</button>
+            <button data-action="tag" class="attach-btn">🏷️ Tag</button>
+          </div>
+          <div class="composer-right">
+            <button id="postSubmit" class="btn-primary">Post</button>
+          </div>
+        </div>
+
+        <div id="composerFeedback" class="muted small" aria-live="polite"></div>
+      </section>
+
+      <!-- Feed list -->
+      <section id="feedList" class="feed-list" aria-live="polite">
+        <!-- JavaScript will inject post cards here -->
+      </section>
+    </main>
+
+    <!-- Right column: jobs + recommended alumni -->
+    <aside class="right-col" aria-label="Right sidebar">
+      <div class="card jobs-card">
+        <div class="card-heading"><h4>Recommended Jobs</h4><a href="#" class="muted small">See all</a></div>
+
+        <div class="job">
+          <img class="comp-logo" src="https://via.placeholder.com/48x48.png?text=TC" alt="TechCorp logo">
+          <div class="job-body">
+            <strong>Associate Product Manager</strong>
+            <div class="muted small">TechCorp • $85k–95k • Remote</div>
+          </div>
+          <div class="job-actions"><button class="btn-outline small">Apply</button></div>
+        </div>
+
+        <div class="job">
+          <img class="comp-logo" src="https://via.placeholder.com/48x48.png?text=DA" alt="DataAI logo">
+          <div class="job-body">
+            <strong>Data Analyst</strong>
+            <div class="muted small">DataAI • $75k–90k • Hybrid</div>
+          </div>
+          <div class="job-actions"><button class="btn-outline small">Apply</button></div>
+        </div>
+      </div>
+
+      <div class="card recs-card">
+        <div class="card-heading"><h4>Recommended Alumni</h4><a href="#" class="muted small">View more</a></div>
+
+        <div class="alum">
+          <img src="https://i.pravatar.cc/56?img=10" alt="">
+          <div class="alum-body">
+            <strong>Sarah Lee</strong>
+            <div class="muted small">Product Designer • 3 mutual</div>
+            <div class="tags"><span class="tag">Mentor</span></div>
+          </div>
+          <div><button class="btn-primary small connect" data-name="Sarah Lee">Connect</button></div>
+        </div>
+
+        <div class="alum">
+          <img src="https://i.pravatar.cc/56?img=15" alt="">
+          <div class="alum-body">
+            <strong>Mark R.</strong>
+            <div class="muted small">Data Scientist • 2 mutual</div>
+            <div class="tags"><span class="tag">Open to mentoring</span></div>
+          </div>
+          <div><button class="btn-outline small connect" data-name="Mark R.">Connect</button></div>
+        </div>
+
+      </div>
+    </aside>
+  </div>
+  <script src="theme.js"></script>
+  <script src="feed.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+:root{
+  --bg:#f6fbff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary-600:#2563eb;
+  --accent:linear-gradient(135deg,#60a5fa 0%,#7dd3fc 100%);
+  --shadow:0 10px 30px rgba(16,24,40,0.06);
+  --radius:14px;
+  font-family: "Facebook Sans", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  min-height:100vh;
+}
+
+.events-page{
+  max-width:1120px;
+  margin:0 auto;
+  padding:24px;
+}
+
+.events-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.eyebrow{
+  margin:0 0 8px;
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--primary-600);
+}
+
+.events-header h1{margin:0 0 8px;font-size:2rem}
+.events-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.btn-primary{display:inline-block;background:var(--accent);color:#05204A;border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700;text-decoration:none}
+.btn-outline{display:inline-block;background:#fff;border:1px solid rgba(15,23,42,0.06);padding:10px 12px;border-radius:10px;cursor:pointer;color:#0f172a;text-decoration:none}
+.muted{color:var(--muted)}
+
+.event-card{display:flex;flex-direction:column;gap:12px}
+.event-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.event-status{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(37,99,235,0.08);color:var(--primary-600);font-size:0.85rem;font-weight:700}
+.event-card ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:6px}
+.event-tags{display:flex;flex-wrap:wrap;gap:8px}
+.event-tags span{background:rgba(15,23,42,0.04);padding:6px 10px;border-radius:999px;font-size:0.82rem}
+
+@media (max-width:760px){
+  .events-header{flex-direction:column}
+  .events-grid{grid-template-columns:1fr}
+}

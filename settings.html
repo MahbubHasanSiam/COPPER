@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand-link" href="dashboard.html" aria-label="Back to dashboard">
+        <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="#2563eb"/><path d="M6 12h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 6v12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="brand">COPPER</span>
+      </a>
+      <nav>
+        <a class="btn-outline" href="dashboard.html">Dashboard</a>
+        <a class="btn-outline" href="feed.html">Feed</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="settings-card">
+        <h1>Settings</h1>
+        <p>Control your account preferences and choose between light and dark mode.</p>
+
+        <div class="option-row">
+          <div>
+            <h2>Theme</h2>
+            <p class="muted">Switch between light and dark color modes for the entire site.</p>
+          </div>
+          <div class="toggle-switch">
+            <input id="darkModeToggle" type="checkbox" />
+            <label for="darkModeToggle" aria-label="Toggle dark mode"></label>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="saveSettings" class="btn-primary">Save preferences</button>
+          <a class="btn-outline" href="network.html">Open network</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="theme.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
